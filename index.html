@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/rikmms/progress-bar-4-axios/0a3acf92/dist/nprogress.css" />
+        <link rel="stylesheet" href="./node_modules/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        
+        <div class="navbar">
+            <a class="navbar-brand" href="#">AXIOS</a>
+            <ul class="nav navbar-nav">
+                <li><a href="#" class="menu-page" data-page="users.html">Users</a></li>
+                <li><a href="#" class="menu-page" data-page="posts.html">Posts</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="container" id="pages">
+
+        </div>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.rawgit.com/rikmms/progress-bar-4-axios/0a3acf92/dist/index.js"></script>
+        <script src="./node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="./node_modules/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="app.js"></script>
+        <script>
+            loadProgressBar()
+
+            $(document).ready(function () {                  
+                getPage('users.html');                                      
+            });
+
+            $(document).on('click', '.menu-page', function (e) {
+                e.preventDefault();
+                var page = $(this).data('page');
+                console.log(page);                
+                getPage(page);
+            });
+             
+        </script>
+
+    </body>
+</html>
